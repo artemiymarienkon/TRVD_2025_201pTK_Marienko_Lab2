@@ -13,6 +13,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 const userController = require('./controllers/userController');
 
+const articleController = require('./controllers/articleController');
+
 app.get('/', (req, res) => {
     res.render('index', { title: 'Open Encyclopedia' });
 });
@@ -20,6 +22,10 @@ app.get('/', (req, res) => {
 // Users
 app.get('/users', userController.getUsers);
 app.post('/users', userController.createUser);
+
+// Articles
+app.get('/articles', articleController.getArticles);
+app.post('/articles', articleController.createArticle);
 
 app.listen(port, () => {
     console.log(`Сервер запущено: http://localhost:${port}`);
