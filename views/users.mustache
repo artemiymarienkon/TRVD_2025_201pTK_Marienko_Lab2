@@ -1,16 +1,29 @@
-<h1>Список користувачів</h1>
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Users</title>
+</head>
+<body>
+
+<h1>Користувачі</h1>
+
 <ul>
-  {{#users}}
-  <li>{{name}} ({{email}}, {{age}} років)</li>
-  {{/users}}
+    {{#users}}
+        <li>{{name}} — {{email}}</li>
+    {{/users}}
 </ul>
 
 <h2>Додати користувача</h2>
+
 <form action="/users" method="POST">
-  <input type="text" name="name" placeholder="Ім'я" required>
-  <input type="email" name="email" placeholder="Email" required>
-  <input type="number" name="age" placeholder="Вік" required>
-  <button type="submit">Додати</button>
+    <input type="text" name="name" placeholder="Імʼя" required>
+    <input type="email" name="email" placeholder="Email" required>
+    <button type="submit">Додати</button>
 </form>
 
+<br>
 <a href="/">На головну</a>
+
+</body>
+</html>
