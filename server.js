@@ -30,3 +30,7 @@ app.post('/articles', articleController.createArticle);
 app.listen(port, () => {
     console.log(`Сервер запущено: http://localhost:${port}`);
 });
+
+app.get('/about', (req, res) => {
+    res.render('about');
+});
